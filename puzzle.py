@@ -93,6 +93,31 @@ def check_uniqueness_in_cols(board: list):
     return False
 
 
+def transpose_board(board: list):
+    """
+    Transpose a given board so that each column becomes a row and each row becomes a column.
+
+    Precondition: a board has at least one row and one column.
+
+    >>> transpose_board(['1'])
+    ['1']
+    >>> transpose_board(['12', '34'])
+    ['13', '24']
+    >>> transpose_board(['123', '456', '789'])
+    ['147', '258', '369']
+    >>> transpose_board(['22', '43', '10'])
+    ['241', '230']
+    """
+
+    transposed_board = []
+
+    for row in range(len(board[0])):
+        transposed_board.append("")
+        for column in board:
+            transposed_board[-1] += column[row]
+
+    return transposed_board
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
