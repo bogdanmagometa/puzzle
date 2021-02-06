@@ -89,8 +89,36 @@ def check_row(row: str):
 
 
 def check_uniqueness_in_cols(board: list):
+    """
+    Check if all the numbers in each column are unique within that column.
 
-    return False
+    >>> board = ["**** ****",
+    ... "***1 ****",
+    ... "**  3****",
+    ... "* 4 1****",
+    ... "     9 5 ",
+    ... " 6  83  *",
+    ... "3   1  **",
+    ... "  8  2***",
+    ... "  2  ****"]
+    >>> check_uniqueness_in_cols(board)
+    False
+    >>> board = [
+    ... '12',
+    ... '33']
+    >>> check_uniqueness_in_cols(board)
+    True
+    >>> board = [
+    ... '1**',
+    ... '12*',
+    ... '123']
+    >>> check_uniqueness_in_cols(board)
+    False
+    """
+
+    transposed_board = transpose_board(board)
+
+    return check_uniqueness_in_rows(transposed_board)
 
 
 def transpose_board(board: list):
