@@ -7,7 +7,7 @@ Github repository:
 https://github.com/bogdanmagometa/puzzle
 """
 
-def validate_board(board: list):
+def validate_board(board: list) -> bool:
     """
     Check if a given board is ready.
     Return True if ready, False otherwise.
@@ -29,7 +29,7 @@ def validate_board(board: list):
                                                                     check_uniqueness_colors(board)
 
 
-def check_uniqueness_in_rows(board: list):
+def check_uniqueness_in_rows(board: list) -> bool:
     """
     Check if all the numbers in each row are unique within that row.
 
@@ -64,9 +64,10 @@ def check_uniqueness_in_rows(board: list):
     return True
 
 
-def check_row(row: str):
+def check_row(row: str) -> bool:
     """
     Check if all the digits, which are greater than 0, in row are unique.
+    Return True if unique, False otherwise.
 
     >>> check_row('3132')
     False
@@ -91,9 +92,10 @@ def check_row(row: str):
     return True
 
 
-def check_uniqueness_in_cols(board: list):
+def check_uniqueness_in_cols(board: list) -> bool:
     """
     Check if all the numbers in each column are unique within that column.
+    Return True if unique, False otherwise.
 
     >>> board = ["**** ****",
     ... "***1 ****",
@@ -124,9 +126,9 @@ def check_uniqueness_in_cols(board: list):
     return check_uniqueness_in_rows(transposed_board)
 
 
-def transpose_board(board: list):
+def transpose_board(board: list) -> list:
     """
-    Transpose a given board so that each column becomes a row and each row becomes a column.
+    Return transposed board so that each column becomes a row and each row becomes a column.
 
     Precondition: a board has at least one row and one column.
 
@@ -150,7 +152,7 @@ def transpose_board(board: list):
     return transposed_board
 
 
-def check_uniqueness_colors(board: list):
+def check_uniqueness_colors(board: list) -> bool:
     """
     Check if the numbers of each color are unique withing that color.
     Return True if unique, False otherwise.
