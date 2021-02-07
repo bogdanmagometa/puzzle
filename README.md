@@ -1,4 +1,4 @@
-# puzzle
+# puzzle (python 3.9.1)
 
 ### Project for checking if the board in puzzle game is ready.
 
